@@ -4,7 +4,7 @@
 
 
     @foreach($discussions as $discussion)
-        <div class="card">
+        <div class="card mb-4">
             <div class="card-header">
                 <div class="d-flex justify-content-between">
                     <div>

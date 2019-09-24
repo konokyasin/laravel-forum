@@ -3,6 +3,8 @@
 namespace App;
 
 
+use App\Notifications\ReplyMarkedAsBestReply;
+
 class Discussion extends Model
 {
 
@@ -34,5 +36,7 @@ class Discussion extends Model
         return $this->update([
             'reply_id'=>$reply->id
         ]);
+
+        $reply->owner->notify(new ReplyMarkedAsBestReply($reply->discussion));
     }
 }
